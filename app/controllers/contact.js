@@ -12,6 +12,21 @@ export default Ember.Controller.extend({
   isDisabled: Ember.computed.not('isEnabled'),
 
   actions: {
+    saveContact() {
+      const email = this.get('emailAddress');
+      const message = this.get('message');
+
+      const newContact = this.store.createRecord('contact', {
+        email: email,
+        message: message
+      });
+
+      newContact.save().then(() => {
+        this.set('responseMessage', `Thank you! We saved your contact message`);
+        this.set('emailAddress', '');
+        this.set('message', '');
+      });
+    }
 
   }
 
