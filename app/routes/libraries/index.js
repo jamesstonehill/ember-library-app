@@ -6,14 +6,15 @@ export default Ember.Route.extend({
     return this.store.findAll('library');
   },
 
-  // actions: {
-  //   deleteLibrary(library) {
-  //     let confirmation = confirm('Are you sure?');
-  //
-  //     if (confirmation) {
-  //       library.destroyRecord();
-  //     }
-  //   }
-  // }
+  actions: {
+
+    deleteLibrary(library) {
+      let confirmation = confirm('Are you sure?');
+
+      if (confirmation) {
+        library.destroyRecord();
+      }
+    }
+  }
 
 });
