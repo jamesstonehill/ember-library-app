@@ -10,6 +10,13 @@ export default Ember.Controller.extend({
   actions: {
 
     saveInvitation() {
+
+      // newLibrary.save().then(() => this.transitionTo('libraries'));
+      // newInvitation.save().then(function() {
+      //   this.set('responseMessage', `Thank you! We saved your email address with the following id: ${response.get('id')}`);
+      //   this.set('emailAddress', '');
+      // })
+
       const email = this.get('emailAddress');
 
       const newInvitation = this.store.createRecord('invitation', {
@@ -22,5 +29,4 @@ export default Ember.Controller.extend({
       });
     }
   }
-
 });
