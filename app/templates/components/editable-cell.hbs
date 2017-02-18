@@ -1,0 +1,16 @@
+<td>
+  {{#if isEditing}}
+    <form {{action 'saveAction' "Test Text" on='submit'}} class="form-inline">
+      <div class="input-group">
+        <input class="form-control" value="{{startingText}}">
+        <div class="input-group-btn">
+          <button type="submit" class="btn btn-success">Save</button>
+          <button class="btn btn-danger" {{action 'cancelEdit'}}>Cancel</button>
+        </div>
+      </div>
+    </form>
+
+  {{else}}
+    <span {{action 'edit' author}}>{{startingText}}</span>
+  {{/if}}
+</td>

@@ -25,6 +25,5 @@ export default Ember.Component.extend({
     deleteAction() {
       this.sendAction('deleteAction');
     }
-
   }
 });

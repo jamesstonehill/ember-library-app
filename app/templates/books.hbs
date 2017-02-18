@@ -1,1 +1,29 @@
-{{outlet}}
+<h1>Books</h1>
+
+<table class="table table-bordered table-striped">
+  <thead>
+  <tr>
+    <th>
+      Title
+      <br><small class="small not-bold">(Click on name for editing)</small>
+    </th>
+    <th class="vtop">Author</th>
+    <th class="vtop">Release Year</th>
+    <th class="vtop">Library</th>
+  </tr>
+  </thead>
+  <tbody>
+  {{#each model as |book|}}
+    <tr>
+      <td>
+        {{editable-cell
+            startingText=book.title
+            saveAction=save}}
+      </td>
+      <td>{{book.author.name}}</td>
+      <td>{{book.releaseYear}}</td>
+      <td>{{book.library.name}}</td>
+    </tr>
+  {{/each}}
+  </tbody>
+</table>
